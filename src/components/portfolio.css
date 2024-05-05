@@ -28,6 +28,9 @@ html {
   background: rgb(37, 34, 34);
 }
 
+
+/* Portfolio navbar css started */
+
 nav {
   position: fixed;
   width: 100%;
@@ -71,7 +74,7 @@ nav > div > div > a {
   list-style-type: none;
   position: fixed;
   background: #111;
-  height: 100vh;
+  height: 110vh;
   top: 0;
   left: -100%;
   width: 100%;
@@ -115,6 +118,8 @@ nav > div > div > a {
   z-index: 999;
   right: 40px;
 }
+
+/* Home css started */
 
 .home {
   display: flex;
@@ -179,6 +184,8 @@ section {
 .developer {
   display: none;
 }
+
+/* About page css started */
 
 .about,
 .skills,
@@ -246,6 +253,8 @@ section .title::after {
   border: 1px solid crimson;
   color: crimson;
 }
+
+/* Skills page css started */
 
 .skills {
   background-color: #111;
@@ -340,6 +349,9 @@ section .title::after {
 .max-width .project-img:hover {
   transform: scale(1.1);
 }
+
+/* Projects page css started  */
+
 .project-container {
   position: relative;
   overflow: hidden;
@@ -386,6 +398,8 @@ section .title::after {
   background: #fff;
   border-radius: 50%;
 }
+
+/* Contact page css started */
 
 .contact {
   background-color: #111;
@@ -470,7 +484,7 @@ textarea {
   bottom: 5px;
   right: 15px;
   color: #fff;
-  z-index: 9999;
+  z-index: 999;
   opacity: 0;
   transition: all 0.2s ease;
 }
@@ -487,6 +501,8 @@ textarea {
   padding: 5px;
 }
 
+/* Footer page css started */
+
 footer {
   background-color: #111;
   padding: 15px 0;
@@ -499,6 +515,8 @@ footer {
 footer a {
   color: crimson;
 }
+
+/* Responsive css code */
 
 @media screen and (min-width: 386px) {
   .home,
