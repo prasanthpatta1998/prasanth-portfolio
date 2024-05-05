@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import PortfolioNavbar from './components/PortfolioNavbar'
+import Home from './components/Home'
+import About from './components/About'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import ScrollUpButton from './components/ScrollUpButton'
+import Footer from './components/Footer'
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    document.title = 'Prasanth Portfolio'
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ScrollUpButton/>
+      <PortfolioNavbar/>
+      <Home/>
+      <About/>
+      <Skills/>
+      <Projects/>
+      <Contact/>
+      <Footer/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
