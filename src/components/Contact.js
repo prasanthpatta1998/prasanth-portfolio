@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaUser } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -12,35 +13,34 @@ const Contact = () => {
     message: "",
   });
 
-  const { fullname, email, subject, message} = userData
+  const form = useRef();
+
+  const { fullname, email, subject, message } = userData;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      if (fullname && email && subject && message) {
-        const response = await fetch("http://localhost:3001/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
+
+    if (fullname && email && subject && message) {
+      emailjs
+        .sendForm("service_g5b9115", "template_qkx7av9", form.current, {
+          publicKey: "79qpISZQbSQpHraqG",
+        })
+        .then(
+          () => {
+            setUserData({
+              fullname: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
+            alert("Sent data successfully");
           },
-          body: JSON.stringify(userData),
-        });
-        if (response.ok) {
-          setUserData({
-            fullname: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-          alert("Data sent successfully");
-        } else {
-          alert("Please try again later");
-        }
-      } else {
-        alert("Please fill the all feilds");
-      }
-    } catch (error) {
-      alert("Please try again later");
+          (error) => {
+            alert("Please try again later");
+          }
+        );
+    } else {
+      alert("Please fill the all feilds");
     }
   };
 
@@ -93,13 +93,13 @@ const Contact = () => {
             </div>
           </div>
           <div style={{ marginTop: "20px" }} className="details-container2">
-            <form className="form-container" onSubmit={handleSubmit}>
+            <form className="form-container" ref={form} onSubmit={handleSubmit}>
               <strong className="text" style={{ marginBottom: "15px" }}>
                 Message me
               </strong>
               <input
                 type="text"
-                name="fullname"
+                name="user_name"
                 placeholder="Full Name"
                 value={userData.fullname}
                 onChange={(e) =>
@@ -109,7 +109,7 @@ const Contact = () => {
               />
               <input
                 type="email"
-                name="email"
+                name="user_email"
                 placeholder="Email"
                 required
                 value={userData.email}
@@ -120,7 +120,7 @@ const Contact = () => {
               />
               <input
                 type="text"
-                name="subject"
+                name="user_subject"
                 placeholder="Subject"
                 value={userData.subject}
                 onChange={(e) =>
@@ -129,7 +129,7 @@ const Contact = () => {
               />
               <textarea
                 name="message"
-                id=""
+                id="message"
                 placeholder="Message..."
                 className="message-area"
                 value={userData.message}

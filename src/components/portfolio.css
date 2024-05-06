@@ -123,7 +123,7 @@ nav > div > div > a {
 
 .home {
   display: flex;
-  background: url("../../public/assets/vector3.jpg") no-repeat;
+  background: url("../images/vector3.jpg") no-repeat;
   height: 100vh;
   color: #fff;
   min-height: 500px;
