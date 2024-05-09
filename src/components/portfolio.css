@@ -471,6 +471,7 @@ textarea {
   background: crimson;
   border: 2px solid crimson;
   transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-container button:hover {
