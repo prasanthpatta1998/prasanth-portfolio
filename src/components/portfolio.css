@@ -270,7 +270,7 @@ section .title::after {
 }
 
 .about-content a:hover {
-  background: #111;
+  background: transparent;
   border: 1px solid crimson;
   color: crimson;
 }
