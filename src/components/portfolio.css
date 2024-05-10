@@ -711,6 +711,11 @@ footer a {
 }
 
 @media screen and (min-width: 1025px) {
+
+  #canvas{
+    z-index: 0;
+  }
+
   .max-width {
     padding: 0 80px;
   }
