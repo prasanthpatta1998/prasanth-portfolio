@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div>
-      <section className="app"></section>
+      <section className="app canvas"></section>
       <StarField/>
       <ScrollUpButton />
       <PortfolioNavbar />

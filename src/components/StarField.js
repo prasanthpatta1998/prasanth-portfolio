@@ -196,7 +196,7 @@ const StarField = () => {
     }
   }, []);
 
-  return <canvas id="canvas"></canvas>;
+  return <canvas id="canvas" className="canvas"></canvas>;
 };
 
 export default StarField;
