@@ -18,7 +18,7 @@ import "swiper/css/effect-coverflow";
 
 const Projects = () => {
   useEffect(() => {
-    Aos.init({ duration: 1200 });
+    Aos.init({ duration: 1200});
   });
 
   return (
