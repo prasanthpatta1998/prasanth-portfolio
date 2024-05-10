@@ -7,11 +7,13 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ScrollUpButton from "./components/ScrollUpButton";
 import Footer from "./components/Footer";
+import StarField from "./components/StarField";
 
 const App = () => {
 
   return (
     <div>
+      <StarField/>
       <ScrollUpButton />
       <PortfolioNavbar />
       <Home />

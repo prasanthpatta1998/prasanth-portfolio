@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Typed from "typed.js";
 import developer from "../images/Programming-pana.png";
+import Aos from "aos";
 import "animate.css";
 import "./portfolio.css";
 
@@ -13,10 +14,12 @@ const Home = () => {
       loop: true,
     });
 
+    Aos.init({duration: 1200})
+
     return () => {
       typed.destroy();
     };
-  });
+  },[]);
 
   return (
     <section className="home" id="home">
@@ -36,7 +39,7 @@ const Home = () => {
         >
           Hire me
         </a>
-        <img src={developer} alt="developer" className="developer" />
+        <img src={developer} alt="developer" className="developer" data-aos="zoom-in-up"/>
         
       </div>
     </section>

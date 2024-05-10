@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "animate.css";
+import "aos/dist/aos.css";
 
 const About = () => {
+
+  useEffect(() => {
+    Aos.init({duration: 1200})
+  },[])
+
   return (
     <section className="about" id="about">
-      <div className="max-width">
-        <h2 className="title">About me</h2>
+      <div className="max-width" style={{ position: "relative", zIndex: "1" }}>
+        <h2 className="title" data-aos="fade-left">
+          About me
+        </h2>
         <div className="about-content">
           <div className="column right">
-            <div className="text" style={{ color: "#111" }}>
+            <div className="text" style={{ color: "crimson" }} data-aos="fade-right">
               I'm Prasanth
             </div>
-            <p>
+            <p data-aos="fade-left">
               I'm a highly motivated and results-oriented Full Stack Developer
               with a passion for crafting user-friendly and impactful web
               applications. Leveraging my expertise in front-end technologies
@@ -25,6 +35,7 @@ const About = () => {
               href="https://drive.google.com/file/d/1-ZeVgxhIMsj4fsXkaqOUg2y8BZ9FCdCA/view?usp=drive_link"
               target="_blank"
               rel="noreferrer"
+              data-aos="fade-right"
             >
               Download CV
             </a>

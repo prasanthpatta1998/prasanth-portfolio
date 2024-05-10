@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaUser } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const [userData, setUserData] = useState({
@@ -44,14 +47,26 @@ const Contact = () => {
     }
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 1200 });
+  }, []);
+
   return (
     <section className="contact" id="contact">
-      <div className="max-width" style={{ color: "#fff" }}>
-        <h2 className="title" style={{ color: "#fff" }}>
+      <div
+        className="max-width"
+        style={{ color: "#fff", position: "relative", zIndex: "1" }}
+      >
+        <h2 className="title" style={{ color: "#fff" }} data-aos="fade-left">
           Contact me
         </h2>
         <div className="contact-container">
-          <div className="details-container1">
+          <div
+            className="details-container1"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <strong className="text">Get in touch</strong>
             <div className="user-container">
               <FaUser className="user-icon" />
@@ -93,7 +108,14 @@ const Contact = () => {
             </div>
           </div>
           <div style={{ marginTop: "20px" }} className="details-container2">
-            <form className="form-container" ref={form} onSubmit={handleSubmit}>
+            <form
+              className="form-container"
+              ref={form}
+              onSubmit={handleSubmit}
+              data-aos="fade-left"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
               <strong className="text" style={{ marginBottom: "15px" }}>
                 Message me
               </strong>

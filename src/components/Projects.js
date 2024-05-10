@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 
@@ -7,6 +7,9 @@ import movies from "../images/movies.png";
 import wikipedia from "../images/wikipedia.png";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
@@ -14,10 +17,16 @@ import "swiper/css/effect-cards";
 import "swiper/css/effect-coverflow";
 
 const Projects = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1200 });
+  });
+
   return (
     <section className="projects" id="projects">
       <div className="max-width">
-        <h2 className="title">Projects</h2>
+        <h2 className="title" data-aos="zoom-out-right">
+          Projects
+        </h2>
         <Swiper
           breakpoints={{
             386: {
@@ -42,7 +51,12 @@ const Projects = () => {
           modules={[Pagination, Autoplay, EffectCoverflow]}
         >
           <SwiperSlide>
-            <div className="project-container">
+            <div
+              className="project-container"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <img src={nextwatch} alt="nextwatch" className="project-img" />
               <div className="project-layer">
                 <h2>Nxt Watch Platform</h2>
@@ -62,7 +76,12 @@ const Projects = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="project-container">
+            <div
+              className="project-container"
+              data-aos="flip-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <img src={movies} alt="nextwatch" className="project-img" />
               <div className="project-layer">
                 <h2>Movies App</h2>
@@ -82,7 +101,12 @@ const Projects = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="project-container">
+            <div
+              className="project-container"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <img src={wikipedia} alt="nextwatch" className="project-img" />
               <div className="project-layer">
                 <h2>Wikipedia Search Application</h2>
