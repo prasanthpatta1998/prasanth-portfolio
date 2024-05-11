@@ -7,4 +7,4 @@ Highlighted my professional background, skills, and projects effectively to attr
 
 + **Technologies used:** HTML, CSS, JavaScript, React, React Swiper, Responsive Design 
 
-+ __[Link of the application](https://cool-gumdrop-b53590.netlify.app/)__  
++ __[Link of the application](https://prasant-portfolio.netlify.app/)__  
