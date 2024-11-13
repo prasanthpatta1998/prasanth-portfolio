@@ -39,7 +39,7 @@ const Home = () => {
         >
           Hire me
         </a>
-        <img src={developer} alt="developer" className="developer" data-aos="zoom-in-up"/>
+        <img src={developer} alt="developer" className="developer" data-aos="zoom-in-up" lazy/>
         
       </div>
     </section>
