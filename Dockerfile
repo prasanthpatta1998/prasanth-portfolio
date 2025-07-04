@@ -1,20 +1,13 @@
-# -------- STAGE 1: Build the React app --------
+# Stage 1: Build React
 FROM node:18-alpine AS builder
-
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm install
-
 COPY . .
 RUN npm run build
 
-
-# -------- STAGE 2: Serve with Distroless Nginx --------
-FROM gcr.io/distroless/nginx-static
-
-# Distroless expects the static site to be in /www
-COPY --from=builder /app/build /www
-
-# This base image already listens on port 8080
-# So no CMD or EXPOSE needed — it's all predefined
+# Stage 2: Serve with Alpine Nginx
+FROM nginx:1.25-alpine
+COPY --from=builder /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
