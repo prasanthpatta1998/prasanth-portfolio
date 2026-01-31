@@ -32,7 +32,7 @@ const About = () => {
               the powerful Redux Toolkit.
             </p>
             <a
-              href="https://drive.google.com/file/d/1k1_DZqrxvedi3QAVZj2JwWjPa_WuplUj/view?usp=sharing"
+              href="https://drive.google.com/file/d/14jM8i2ePEvR6HfEv0R7CpcPA8AfF9L0D/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               data-aos="fade-right"
