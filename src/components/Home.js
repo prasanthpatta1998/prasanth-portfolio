@@ -28,7 +28,7 @@ const Home = () => {
           Hello, My name is
         </div>
         <div className="text-2 animate__animated animate__bounceInRight">
-          Prasanth Patta
+          Prasanth
         </div>
         <div className="text-3 animate__animated animate__bounceInLeft">
           And I'm a <span className="typing"></span>
