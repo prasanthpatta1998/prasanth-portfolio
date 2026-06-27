@@ -17,5 +17,5 @@ spec:
         - name: cont-1
           image: prasanth199/myportfolio:v1
           ports:
-            - containerPort: 3000
+            - containerPort: 80
             
